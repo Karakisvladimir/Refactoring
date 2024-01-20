@@ -41,10 +41,10 @@ public class Game {
             while (true) {
                 input = scan.nextByte();
                 if (input > 0 && input < 10) {
-                    if (box.box[input - 1] == 'X' || box.box[input - 1] == 'O')
+                    if (box.cell[input - 1] == 'X' || box.cell[input - 1] == 'O')
                         System.out.println("That one is already in use. Enter another.");
                     else {
-                        box.box[input - 1] = 'X';
+                        box.cell[input - 1] = 'X';
                         break;
                     }
                 } else
@@ -65,8 +65,8 @@ public class Game {
 
             while (true) {
                 byte rand = (byte) (Math.random() * (9 - 1 + 1) + 1);
-                if (box.box[rand - 1] != 'X' && box.box[rand - 1] != 'O') {
-                    box.box[rand - 1] = 'O';
+                if (box.cell[rand - 1] != 'X' && box.cell[rand - 1] != 'O') {
+                    box.cell[rand - 1] = 'O';
                     break;
                 }
             }
@@ -78,4 +78,3 @@ public class Game {
         }
     }
 }
-
